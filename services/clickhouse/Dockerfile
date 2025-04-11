@@ -2,7 +2,8 @@ FROM clickhouse/clickhouse-server:23.3
 
 COPY config.xml /etc/clickhouse-server/config.xml
 COPY users.xml /etc/clickhouse-server/users.xml
-COPY clusters.xml /etc/clickhouse-server/clusters.xml
+#COPY clusters.xml /etc/clickhouse-server/clusters.xml
+COPY cluster.xml /etc/clickhouse-server/cluster.xml
 
 # download UDF binary from SigNoz's source. Shown here as a reference:
 RUN mkdir -p /var/lib/clickhouse/user_scripts && \
