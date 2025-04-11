@@ -1,0 +1,33 @@
+# railway.toml
+[projects]
+name = "signoz-ironman"
+
+# Each [[service]] block refers to one service directory
+[[service]]
+name = "clickhouse"
+rootDirectory = "services/clickhouse"
+env = { RAILWAY_VOLUME_MOUNT_PATH = "/var/lib/clickhouse" }
+[service.build]
+builder = "DOCKER"
+
+[[service]]
+name = "signoz"
+rootDirectory = "services/signoz"
+env = { PORT = "8080" }
+[service.build]
+builder = "DOCKER"
+[service.deploy]
+healthcheckPath = "/api/v1/health"  # Wait for SigNoz to be healthy
+
+[[service]]
+name = "otel-collector"
+rootDirectory = "services/otel-collector"
+env = { PORT = "4317" }
+[service.build]
+builder = "DOCKER"
+
+[[service]]
+name = "migrator"
+rootDirectory = "services/migrator"
+[service.build]
+builder = "DOCKER"
