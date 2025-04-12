@@ -59,7 +59,7 @@ exporters:
   clickhousetraces:
     # datasource: tcp://clickhouse:9000/signoz_traces
     datasource: tcp://clickhouse.railway.internal:9000/signoz_traces
-    low_cardinal_exception_grouping: ${env:LOW_CARDINAL_EXCEPTION_GROUPING}
+    low_cardinal_exception_grouping: true
     #use_new_schema: true
   clickhousemetricswrite:
     # endpoint: tcp://clickhouse:9000/signoz_metrics
