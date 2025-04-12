@@ -7,6 +7,8 @@ RUN ls -al /etc/clickhouse-server/config.d
 #RUN rm -f /etc/clickhouse-server/config.d/docker_related_config.xml
 #RUN ls -al /etc/clickhouse-server/config.d
 
+COPY zzz-logger.xml /etc/clickhouse-server/config.d/
+
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 

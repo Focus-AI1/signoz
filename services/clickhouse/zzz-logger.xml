@@ -1,0 +1,7 @@
+<!-- File: zzz-logger.xml -->
+<clickhouse>
+  <logger>
+    <level>information</level>
+    <console>1</console>
+  </logger>
+</clickhouse>
