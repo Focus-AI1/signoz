@@ -1,10 +1,11 @@
 FROM clickhouse/clickhouse-server:23.3
 
-# Try removing that file or the entire config.d contents
-RUN rm -f /etc/clickhouse-server/config.d/docker_related_config.xml
-
-# Debug step: see what actually remains in config.d
+RUN rm -f /etc/clickhouse-server/config.d/*.xml
 RUN ls -al /etc/clickhouse-server/config.d
+
+# Try removing that file or the entire config.d contents
+#RUN rm -f /etc/clickhouse-server/config.d/docker_related_config.xml
+#RUN ls -al /etc/clickhouse-server/config.d
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
