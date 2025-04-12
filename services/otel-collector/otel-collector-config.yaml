@@ -69,7 +69,7 @@ exporters:
   clickhousemetricswrite/prometheus:
     # endpoint: tcp://clickhouse:9000/signoz_metrics
     endpoint: tcp://clickhouse.railway.internal:9000/signoz_metrics
-  signozclickhousemetrics:
+  signozclickhousemetricswrite:
     # dsn: tcp://clickhouse:9000/signoz_metrics
     dsn: tcp://clickhouse.railway.internal:9000/signoz_metrics
   clickhouselogsexporter:
