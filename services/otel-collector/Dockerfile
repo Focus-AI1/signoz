@@ -1,5 +1,6 @@
 #FROM signoz/signoz-otel-collector:v0.9.3
-FROM signoz/signoz-otel-collector:v0.111.38
+#FROM signoz/signoz-otel-collector:v0.111.38
+FROM signoz/signoz-otel-collector:latest
 
 # The official collector container typically expects a config at /etc/otel-collector-config.yaml
 COPY otel-collector-config.yaml /etc/otel-collector-config.yaml
