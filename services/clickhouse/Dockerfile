@@ -1,5 +1,20 @@
 FROM clickhouse/clickhouse-server:23.3
 
+# Try removing that file or the entire config.d contents
+RUN rm -f /etc/clickhouse-server/config.d/docker_related_config.xml
+
+# Debug step: see what actually remains in config.d
+RUN ls -al /etc/clickhouse-server/config.d
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
+
+
+
+#FROM clickhouse/clickhouse-server:23.3
+
 #COPY config.xml /etc/clickhouse-server/config.xml
 #COPY users.xml /etc/clickhouse-server/users.xml
 #COPY clusters.xml /etc/clickhouse-server/clusters.xml
@@ -10,13 +25,13 @@ FROM clickhouse/clickhouse-server:23.3
 #   wget -O /usr/local/bin/libclickhouse_functions_udf.so \
 #   curl -SL -o /usr/local/bin/libclickhouse_functions_udf.so \
 #   https://github.com/<somewhere>/histogramQuantile-binary.so
-RUN rm -f /etc/clickhouse-server/config.d/docker_related_config.xml
+#RUN rm -f /etc/clickhouse-server/config.d/docker_related_config.xml
 
 
 # Copy an entrypoint script that ensures the UDF is placed on the volume 
 # if needed
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+#COPY entrypoint.sh /entrypoint.sh
+#RUN chmod +x /entrypoint.sh
 
-EXPOSE 9000 8123
-ENTRYPOINT ["/entrypoint.sh"]
+#EXPOSE 9000 8123
+#ENTRYPOINT ["/entrypoint.sh"]
