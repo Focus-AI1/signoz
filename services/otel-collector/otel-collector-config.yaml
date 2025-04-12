@@ -60,7 +60,7 @@ exporters:
     # datasource: tcp://clickhouse:9000/signoz_traces
     datasource: tcp://clickhouse.railway.internal:9000/signoz_traces
     low_cardinal_exception_grouping: ${env:LOW_CARDINAL_EXCEPTION_GROUPING}
-    use_new_schema: true
+    #use_new_schema: true
   clickhousemetricswrite:
     # endpoint: tcp://clickhouse:9000/signoz_metrics
     endpoint: tcp://clickhouse.railway.internal:9000/signoz_metrics
@@ -76,7 +76,7 @@ exporters:
     #dsn: tcp://clickhouse:9000/signoz_logs
     dsn: tcp://clickhouse.railway.internal:9000/signoz_logs
     timeout: 10s
-    use_new_schema: true
+    #use_new_schema: true
   # debug: {}
 service:
   telemetry:
