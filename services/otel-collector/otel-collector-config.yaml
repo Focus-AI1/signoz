@@ -95,11 +95,12 @@ service:
     metrics:
       receivers: [otlp]
       processors: [batch]
-      exporters: [clickhousemetricswrite, signozclickhousemetrics]
+      #exporters: [clickhousemetricswrite, signozclickhousemetrics]
+      exporters: [clickhousemetricswrite]
     metrics/prometheus:
       receivers: [prometheus]
       processors: [batch]
-      exporters: [clickhousemetricswrite/prometheus, signozclickhousemetrics]
+      exporters: [clickhousemetricswrite/prometheus]
     logs:
       receivers: [otlp]
       processors: [batch]
