@@ -10,6 +10,8 @@ FROM clickhouse/clickhouse-server:23.3
 #   wget -O /usr/local/bin/libclickhouse_functions_udf.so \
 #   curl -SL -o /usr/local/bin/libclickhouse_functions_udf.so \
 #   https://github.com/<somewhere>/histogramQuantile-binary.so
+RUN rm -f /etc/clickhouse-server/config.d/docker_related_config.xml
+
 
 # Copy an entrypoint script that ensures the UDF is placed on the volume 
 # if needed
