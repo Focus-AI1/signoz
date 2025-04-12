@@ -3,7 +3,8 @@
 FROM signoz/signoz:latest
 
 # Copy additional configs, e.g. custom prometheus config or any override
-COPY config/prometheus.yml /root/config/prometheus.yml
+#COPY config/prometheus.yml /root/config/prometheus.yml
+COPY prometheus.yml /root/config/prometheus.yml
 
 # Expose port 8080 for UI + backend
 EXPOSE 8080
