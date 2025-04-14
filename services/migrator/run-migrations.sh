@@ -11,7 +11,8 @@ echo "Starting schema migration..."
 
 # As an example (might differ by SigNoz version):
 echo "running migrator on clickhouse host $CLICKHOUSE_HOST : port $CLICKHOUSE_PORT"
-/app/schema-migrator --mode=sync --db_host=$CLICKHOUSE_HOST --db_port=$CLICKHOUSE_PORT
+#/app/schema-migrator sync --dsn=tcp://clickhouse.railway.internal:9000 --mode=sync --db_host=$CLICKHOUSE_HOST --db_port=$CLICKHOUSE_PORT
+/app/schema-migrator sync --dsn=tcp://${CLICKHOUSE_HOST}:${CLICKHOUSE_PORT} --up=
 #/app/schema-migrator --mode=async
 
 echo "Migrations completed."
