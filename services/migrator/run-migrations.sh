@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# File: services/migrator/run-migrations.sh
 set -e
 
 echo "Starting schema migration..."
@@ -11,8 +10,9 @@ echo "Starting schema migration..."
 # signoz-schema-migrator --db_host=$CLICKHOUSE_HOST --db_port=$CLICKHOUSE_PORT --mode=async
 
 # As an example (might differ by SigNoz version):
-/app/schema-migrator --mode=sync
-/app/schema-migrator --mode=async
+echo "running migrator on clickhouse host $CLICKHOUSE_HOST : port $CLICKHOUSE_PORT"
+/app/schema-migrator --mode=sync --db_host=$CLICKHOUSE_HOST --db_port=$CLICKHOUSE_PORT
+#/app/schema-migrator --mode=async
 
 echo "Migrations completed."
 
