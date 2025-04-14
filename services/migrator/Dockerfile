@@ -5,7 +5,7 @@ COPY --chmod=0755 run-migrations.sh /run-migrations.sh
 #RUN chmod +x /run-migrations.sh
 
 ENV CLICKHOUSE_HOST=clickhouse.railway.internal
-ENV CLICKHOUSE_PORT=9000
+ENV CLICKHOUSE_PORT=8123
 
 # Default command will just run the script
 ENTRYPOINT ["/run-migrations.sh"]
