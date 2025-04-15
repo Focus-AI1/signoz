@@ -1,12 +1,15 @@
 <clickhouse>
+    <!-- TODO may not need these -->
+    <allow_data_ownership_mismatch>true</allow_data_ownership_mismatch>
+    <verbose_logs>true</verbose_logs>
+    <allow_no_password>0</allow_no_password>
 
-    <!-- Where data is stored on disk -->
     <path>/var/lib/clickhouse/</path>
     <tmp_path>/var/lib/clickhouse/tmp/</tmp_path>
     <user_files_path>/var/lib/clickhouse/user_files/</user_files_path>
     <format_schema_path>/var/lib/clickhouse/format_schemas/</format_schema_path>
 
-    <!-- Logging goes here, or to console -->
+    <!-- TODO maybe only log to console? -->
     <logger>
       <log>/var/log/clickhouse-server/clickhouse-server.log</log>
       <errorlog>/var/log/clickhouse-server/clickhouse-server.err.log</errorlog>
@@ -15,13 +18,6 @@
       <console>1</console>
     </logger>
 
-    <!-- If you prefer console logging only, do something like:
-    <logger>
-      <level>information</level>
-      <console>1</console>
-    </logger>
-    -->
-
     <!-- The main place ClickHouse looks for a default profile. -->
     <default_profile>default</default_profile>
 
@@ -29,6 +25,7 @@
          This is where you can set default query limits, etc. -->
     <profiles>
       <default>
+	<no_password />
         <!-- Example: no special settings, but define the profile so it exists. -->
       </default>
     </profiles>
