@@ -8,7 +8,7 @@ RUN rm /etc/clickhouse-server/config.xml || true
 # Or remove if you want to do everything from /config.d. 
 RUN rm /etc/clickhouse-server/config.d/docker_related_config.xml || true
 #COPY zzz-logger.xml /etc/clickhouse-server/config.d/zzz-logger.xml
-COPY zzz-logger.xml /etc/clickhouse-server/config.d/config.xml
+COPY zzz-logger.xml /etc/clickhouse-server/config.xml
 
 ENV CLICKHOUSE_DO_NOT_REINIT_CONFIG=1
 USER clickhouse
