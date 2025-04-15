@@ -10,7 +10,9 @@ RUN rm /etc/clickhouse-server/config.d/docker_related_config.xml || true
 #COPY zzz-logger.xml /etc/clickhouse-server/config.d/zzz-logger.xml
 COPY zzz-logger.xml /etc/clickhouse-server/config.xml
 
-RUN chown -R clickhouse:clickhouse /var/lib/clickhouse /var/log/clickhouse-server
+#RUN chown -R clickhouse:clickhouse /var/lib/clickhouse /var/log/clickhouse-server
+RUN echo 'running chown'
+RUN chown -R clickhouse:clickhouse /var/lib/clickhouse
 
 ENV CLICKHOUSE_DO_NOT_REINIT_CONFIG=1
 USER clickhouse
