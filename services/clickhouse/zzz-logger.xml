@@ -1,5 +1,8 @@
 <!-- File: zzz-logger.xml -->
 <clickhouse>
+  <listen_host>::</listen_host>
+  <listen_host>0.0.0.0</listen_host>
+  <listen_try>0</listen_try>
   <logger>
     <level>information</level>
     <console>1</console>
