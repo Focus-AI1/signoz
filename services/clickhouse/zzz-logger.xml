@@ -12,6 +12,7 @@
       <errorlog>/var/log/clickhouse-server/clickhouse-server.err.log</errorlog>
       <!--<level>information</level>-->
       <level>debug</level>
+      <console>1</console>
     </logger>
 
     <!-- If you prefer console logging only, do something like:
