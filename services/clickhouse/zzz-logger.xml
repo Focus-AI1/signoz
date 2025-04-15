@@ -1,4 +1,73 @@
+<clickhouse>
+
+    <!-- Where data is stored on disk -->
+    <path>/var/lib/clickhouse/</path>
+    <tmp_path>/var/lib/clickhouse/tmp/</tmp_path>
+    <user_files_path>/var/lib/clickhouse/user_files/</user_files_path>
+    <format_schema_path>/var/lib/clickhouse/format_schemas/</format_schema_path>
+
+    <!-- Logging goes here, or to console -->
+    <logger>
+      <log>/var/log/clickhouse-server/clickhouse-server.log</log>
+      <errorlog>/var/log/clickhouse-server/clickhouse-server.err.log</errorlog>
+      <level>information</level>
+    </logger>
+
+    <!-- If you prefer console logging only, do something like:
+    <logger>
+      <level>information</level>
+      <console>1</console>
+    </logger>
+    -->
+
+    <!-- The main place ClickHouse looks for a default profile. -->
+    <default_profile>default</default_profile>
+
+    <!-- The "profiles" section must define "default". 
+         This is where you can set default query limits, etc. -->
+    <profiles>
+      <default>
+        <!-- Example: no special settings, but define the profile so it exists. -->
+      </default>
+    </profiles>
+
+    <!-- The "users" section must reference that profile. 
+         If you remove or replace the default 'users.xml', you must define at least 
+         one user or fallback user with a valid profile. -->
+    <users>
+      <default>
+        <profiles>default</profiles>
+        <!-- If you want to allow all DBs:
+        <allow_databases>all</allow_databases>
+        -->
+      </default>
+    </users>
+
+    <!-- Force binding to all IPs for the native protocol, but no HTTP port. -->
+    <listen_host>::</listen_host>
+    <listen_host>0.0.0.0</listen_host>
+    <listen_try>0</listen_try>
+
+    <!-- We disable HTTP. 
+         Setting this to 0 or removing it means "no HTTP interface." -->
+    <http_port>0</http_port>
+
+    <!-- The native protocol port -->
+    <tcp_port>9000</tcp_port>
+
+    <!-- If you want to disable MySQL/Postgres compatibility, remove or set them to 0. -->
+    <!-- <mysql_port>0</mysql_port> -->
+    <!-- <postgresql_port>0</postgresql_port> -->
+    
+    <!-- Other optional stuff:
+    <max_connections>4096</max_connections>
+    -->
+
+</clickhouse>
+
+
 <!-- File: zzz-logger.xml -->
+<!--
 <clickhouse>
   <listen_host>::</listen_host>
   <listen_host>0.0.0.0</listen_host>
@@ -7,14 +76,11 @@
     <level>information</level>
     <console>1</console>
   </logger>
-  <!--<http_port>8123</http_port>-->
   <http_port>0</http_port>
   <tcp_port>9000</tcp_port>
-  <!--
   <mysql_port>9004</mysql_port>
   <postgresql_port>9005</postgresql_port>
   <interserver_http_port>9009</interserver_http_port>
-  -->
   <max_connections>4096</max_connections>
   <grpc>
     <enable_ssl>false</enable_ssl>
@@ -24,3 +90,4 @@
     <verbose_logs>true</verbose_logs>
   </grpc>
 </clickhouse>
+-->
