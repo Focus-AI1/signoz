@@ -12,7 +12,7 @@ COPY zzz-logger.xml /etc/clickhouse-server/config.xml
 
 #RUN chown -R clickhouse:clickhouse /var/lib/clickhouse /var/log/clickhouse-server
 RUN echo 'running chown'
-RUN mkdir -P /var/lib/clickhouse /var/lib/clickhouse/tmp
+RUN mkdir -p /var/lib/clickhouse /var/lib/clickhouse/tmp
 RUN chown -R clickhouse:clickhouse /var/lib/clickhouse
 
 ENV CLICKHOUSE_DO_NOT_REINIT_CONFIG=1
