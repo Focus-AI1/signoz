@@ -2,7 +2,7 @@
     <!-- TODO may not need these -->
     <allow_data_ownership_mismatch>true</allow_data_ownership_mismatch>
     <verbose_logs>true</verbose_logs>
-    <allow_no_password>0</allow_no_password>
+    <allow_no_password>1</allow_no_password>
 
     <path>/var/lib/clickhouse/</path>
     <tmp_path>/var/lib/clickhouse/tmp/</tmp_path>
