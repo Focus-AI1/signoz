@@ -1,23 +1,30 @@
 FROM clickhouse/clickhouse-server:23.3
 
 USER root
+
+# delete existing config biznass1
 RUN rm /etc/clickhouse-server/config.xml || true
+RUN rm -f /etc/clickhouse-server/config.d/*.xml
+
+# remove/rename entrypoint (i don't really get the usefulness of this, but whatever)
+RUN mv /entrypoint.sh /entrypoint.sh.bak || true
+RUN mv /usr/bin/entrypoint.sh /usr/bin/entrypoint.sh.bak || true
+
 # copy your minimal config.xml in place of the default
 #COPY my-minimal-config.xml /etc/clickhouse-server/config.xml
 
-# Or remove if you want to do everything from /config.d. 
-RUN rm /etc/clickhouse-server/config.d/docker_related_config.xml || true
-#COPY zzz-logger.xml /etc/clickhouse-server/config.d/zzz-logger.xml
 COPY zzz-logger.xml /etc/clickhouse-server/config.xml
+COPY entrypoint.sh /entrypoint.sh
+
+ENV CLICKHOUSE_DO_NOT_REINIT_CONFIG=1
+#USER clickhouse
+ENTRYPOINT ["/entrypoint.sh"]
+
 
 #RUN chown -R clickhouse:clickhouse /var/lib/clickhouse /var/log/clickhouse-server
 #RUN echo 'running chown'
 #RUN mkdir -p /var/lib/clickhouse /var/lib/clickhouse/tmp
 #RUN chown -R clickhouse:clickhouse /var/lib/clickhouse
-
-ENV CLICKHOUSE_DO_NOT_REINIT_CONFIG=1
-#USER clickhouse
-ENTRYPOINT ["/entrypoint.sh"]
 
 
 #FROM clickhouse/clickhouse-server:23.3
