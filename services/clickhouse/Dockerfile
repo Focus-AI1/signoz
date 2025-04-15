@@ -16,7 +16,7 @@ RUN mv /usr/bin/entrypoint.sh /usr/bin/entrypoint.sh.bak || true
 COPY zzz-logger.xml /etc/clickhouse-server/config.xml
 COPY entrypoint.sh /entrypoint.sh
 
-RUN CHMOD +x /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 ENV CLICKHOUSE_DO_NOT_REINIT_CONFIG=1
 #USER clickhouse
