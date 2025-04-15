@@ -7,4 +7,17 @@
     <level>information</level>
     <console>1</console>
   </logger>
+  <http_port>8123</http_port>
+  <tcp_port>9000</tcp_port>
+  <mysql_port>9004</mysql_port>
+  <postgresql_port>9005</postgresql_port>
+  <interserver_http_port>9009</interserver_http_port>
+  <max_connections>4096</max_connections>
+  <grpc>
+    <enable_ssl>false</enable_ssl>
+    <ssl_require_client_auth>false</ssl_require_client_auth>
+    <transport_compression_type>none</transport_compression_type>
+    <transport_compression_level>0</transport_compression_level>
+    <verbose_logs>true</verbose_logs>
+  </grpc>
 </clickhouse>
