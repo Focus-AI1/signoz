@@ -25,7 +25,6 @@
          This is where you can set default query limits, etc. -->
     <profiles>
       <default>
-	<no_password />
         <!-- Example: no special settings, but define the profile so it exists. -->
       </default>
     </profiles>
@@ -36,6 +35,7 @@
     <users>
       <default>
         <profiles>default</profiles>
+	<no_password />
         <!-- If you want to allow all DBs:
         <allow_databases>all</allow_databases>
         -->
