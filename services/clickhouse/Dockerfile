@@ -18,7 +18,7 @@ COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
 
-RUN chown -R clickhouse:clickhouse /var/lib/clickhouse /var/log/clickhouse-server /entrypoint.sh
+RUN chown -R clickhouse:clickhouse /var/lib/clickhouse /var/log/clickhouse-server /entrypoint.sh /
 USER clickhouse
 
 ENV CLICKHOUSE_DO_NOT_REINIT_CONFIG=1
