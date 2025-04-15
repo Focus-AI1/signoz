@@ -3,11 +3,12 @@ FROM clickhouse/clickhouse-server:23.3
 USER root
 RUN rm /etc/clickhouse-server/config.xml || true
 # copy your minimal config.xml in place of the default
-COPY my-minimal-config.xml /etc/clickhouse-server/config.xml
+#COPY my-minimal-config.xml /etc/clickhouse-server/config.xml
 
 # Or remove if you want to do everything from /config.d. 
 RUN rm /etc/clickhouse-server/config.d/docker_related_config.xml || true
-COPY zzz-logger.xml /etc/clickhouse-server/config.d/zzz-logger.xml
+#COPY zzz-logger.xml /etc/clickhouse-server/config.d/zzz-logger.xml
+COPY zzz-logger.xml /etc/clickhouse-server/config.d/config.xml
 
 ENV CLICKHOUSE_DO_NOT_REINIT_CONFIG=1
 USER clickhouse
