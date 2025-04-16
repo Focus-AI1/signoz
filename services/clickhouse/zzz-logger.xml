@@ -23,6 +23,18 @@
     <!-- The main place ClickHouse looks for a default profile. -->
     <default_profile>default</default_profile>
 
+    <remote_servers>
+      <cluster>
+        <shard>
+          <replica>
+            <host>127.0.0.1</host>
+            <port>9000</port>
+          </replica>
+        </shard>
+      </cluster>
+    </remote_servers>
+
+
     <!-- The "profiles" section must define "default". 
          This is where you can set default query limits, etc. -->
     <profiles>
