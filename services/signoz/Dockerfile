@@ -1,7 +1,7 @@
 # File: services/signoz/Dockerfile
 #FROM signoz/signoz:v0.9.3
 #FROM signoz/signoz:v0.78.1
-FROM signoz/signoz:v0.70.0
+FROM signoz/signoz:v0.79.0
 
 # Copy additional configs, e.g. custom prometheus config or any override
 #COPY config/prometheus.yml /root/config/prometheus.yml
