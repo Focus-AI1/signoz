@@ -1,4 +1,5 @@
-FROM clickhouse/clickhouse-server:23.3
+#FROM clickhouse/clickhouse-server:23.3
+FROM clickhouse/clickhouse-server:latest
 
 USER root
 
