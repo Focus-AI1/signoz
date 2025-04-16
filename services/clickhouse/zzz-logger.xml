@@ -23,6 +23,7 @@
     <!-- The main place ClickHouse looks for a default profile. -->
     <default_profile>default</default_profile>
 
+    <!--
     <remote_servers>
       <cluster>
         <shard>
@@ -33,6 +34,7 @@
         </shard>
       </cluster>
     </remote_servers>
+    -->
 
 
     <!-- The "profiles" section must define "default". 
