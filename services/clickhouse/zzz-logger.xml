@@ -39,6 +39,15 @@
         <port>2181</port>
       </node>
     </zookeeper>
+    <distributed_ddl>
+      <path>/clickhouse/task_queue/ddl</path>
+        <!-- Optional: 
+             <profile>default</profile>  
+             <pool_size>1</pool_size>  
+             <task_max_lifetime>604800</task_max_lifetime>
+             etc. 
+        -->
+    </distributed_ddl>
 
 
 
