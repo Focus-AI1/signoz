@@ -9,6 +9,9 @@ ENV CLICKHOUSE_HOST=clickhouse.railway.internal
 #ENV CLICKHOUSE_HOST=clickhouse-development-6360.up.railway.app
 ENV CLICKHOUSE_PORT=9000
 
+EXPOSE 9000
+EXPOSE 8123
+EXPOSE 9181
 
 # Default command will just run the script
 ENTRYPOINT ["/run-migrations.sh"]
