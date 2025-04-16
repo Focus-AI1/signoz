@@ -52,7 +52,7 @@
     <http_port>0</http_port>
 
     <!-- The native protocol port -->
-    <tcp_port>9000</tcp_port>
+    <tcp_port reuse="true">9000</tcp_port>
 
     <!-- If you want to disable MySQL/Postgres compatibility, remove or set them to 0. -->
     <!-- <mysql_port>0</mysql_port> -->
