@@ -11,9 +11,11 @@
 
     <!-- TODO maybe only log to console? -->
     <logger>
+      <!--
       <log>/var/log/clickhouse-server/clickhouse-server.log</log>
       <errorlog>/var/log/clickhouse-server/clickhouse-server.err.log</errorlog>
-      <!--<level>information</level>-->
+      <level>information</level>
+      -->
       <level>debug</level>
       <console>1</console>
     </logger>
@@ -44,8 +46,12 @@
 
     <!-- Force binding to all IPs for the native protocol, but no HTTP port. -->
     <listen_host>::</listen_host>
+    <!--
     <listen_host>0.0.0.0</listen_host>
+    -->
+    <!--
     <listen_try>0</listen_try>
+    -->
 
     <!-- We disable HTTP. 
          Setting this to 0 or removing it means "no HTTP interface." -->
