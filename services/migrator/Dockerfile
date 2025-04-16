@@ -1,5 +1,5 @@
 #FROM signoz/signoz-schema-migrator:v0.9.3
-FROM signoz/signoz-schema-migrator:v0.111.38
+FROM signoz/signoz-schema-migrator:v0.111.39
 
 COPY --chmod=0755 run-migrations.sh /run-migrations.sh
 #RUN chmod +x /run-migrations.sh

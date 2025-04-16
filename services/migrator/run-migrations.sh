@@ -14,7 +14,7 @@ echo "running migrator on clickhouse host $CLICKHOUSE_HOST : port $CLICKHOUSE_PO
 #/app/schema-migrator sync --dsn=tcp://clickhouse.railway.internal:9000 --mode=sync --db_host=$CLICKHOUSE_HOST --db_port=$CLICKHOUSE_PORT
 echo "running: /signoz-schema-migrator sync --dsn=tcp://${CLICKHOUSE_HOST}:${CLICKHOUSE_PORT} --up="
 
-/signoz-schema-migrator sync --dsn=tcp://${CLICKHOUSE_HOST}:${CLICKHOUSE_PORT} --replication=false --up= --cluster-name=unused
+/signoz-schema-migrator sync --dsn=tcp://${CLICKHOUSE_HOST}:${CLICKHOUSE_PORT} --replication=false --up= --cluster-name=""
 #/app/schema-migrator --mode=async
 
 echo "Migrations completed."
